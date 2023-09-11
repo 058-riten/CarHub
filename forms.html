@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        form{
+            width: 70%;
+            background-image: linear-gradient(skyblue, royalblue, blue, darkblue);
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        form:hover{
+            box-shadow: 0 0 15px 10px gray;
+        }
+
+        label{
+            display:block;
+            width: 25%;
+            font-size: 20px;
+            /* margin-bottom: 5px; */
+        }
+
+        input[type='text'], input[type='date'], input[type='number'], select ,textarea, input[type='email'], input[type='password'],.gender{
+            width: 70%;
+            font-size: 16px;
+            padding: 5px 15px;
+            margin-bottom: 5px;
+        }
+
+        .gender-div{
+            display: inline-flex;
+            justify-content: space-evenly;
+        }
+
+        .button-div{
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        button, input[type='submit'], input[type='reset']{
+            background-color: darkolivegreen;
+            color: antiquewhite;
+            font-size: 16px;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .button:hover, input[type='submit']:hover, input[type='reset']:hover{
+            font-weight: bold;
+            box-shadow: 0 5px 5px 5px darkgreen;
+        }
+
+        input:active{
+            background-color: darkcyan;
+        }
+
+        input:focus{
+            background-color: palevioletred;
+        }
+
+        @media screen and (max-width:900px) {
+            body{
+                font-size: 0.5rem;
+            }
+
+            form{
+                width: 90%;
+            }
+
+            label{
+                display: block;
+                width: 100%;
+                font-size: 16px;
+            }
+
+            input[type='text'], input[type='date'], input[type='number'], select ,textarea, input[type='email'], input[type='password'],.gender{
+                width: 100%;
+            }
+
+        }
+
+
+
+        /* .gender label{
+            display: inline;
+        } */
+    </style>
+</head>
+<body>
+    <!-- 
+        target:
+            _blank
+            _parent
+            _self
+       
+        action : where to land after submission
+
+        method:
+            GET: to get data from server, eg. google search
+                value is passed through url
+                length limited: 2048 characters
+                not secure
+
+            HOST: to send data to server, eg. login, signup
+                  value is passed through body
+                  length unllimited
+                  secure
+     -->
+
+     <form>
+        <!-- 
+            <label for="fname">First Name</label>
+        <input type="text" id="fname" name="f_name" placeholder="Enter your first name" size="20" value="First name" readonly/disabled>
+         -->
+        
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="f_name" placeholder="Enter your first name">
+        <br><br>
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="l_name" placeholder="Enter your last name">
+        <br><br>
+
+        <label for="dob">Date of birth</label>
+        <input type="date" id="dob" value="2000-01-01">
+        <br><br>
+
+        <label for="age">Age</label>
+        <input type="number" id="age" value="18" min="16" max="99">
+        <br><br>
+
+        <label>Gender</label>
+         <div class="gender-div">
+            <div class="gender">
+                <input type="radio" id="m" name="gender" value="male">
+                <label for="m">Male</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="f" name="gender" value="female">
+                <label for="f">Female</label>
+            </div>
+            <div class="gender">
+                <input type="radio" id="o" name="gender" value="others">
+                <label for="o">Others</label>
+            </div>
+         </div>
+         <br>
+
+        <label for="add">Address</label>
+        <select name="address" id="add">
+            <option value="ktm">Kathmandu</option>
+            <option value="pkr">Pokhara</option>
+            <option value="bkt">Bhaktapur</option>
+            <option value="ltp">Lalitpur</option>
+        </select>
+        <br><br>
+
+        <label for="email-address">E-mail</label>
+        <input type="email" id="email-address">
+        <br><br>
+
+        <label for="pwd">Password</label>
+        <input type="password" id="pwd" minlength="8" required>
+        <br><br>
+
+        <label for="desc">Description</label>
+        <textarea name="description" id="desc" cols="30" rows="10" maxlength="30" minlength="10"  required></textarea>
+        <br><br>
+
+        <label for="hobby">Hobbies</label>
+        <div class="gender-div">
+            <div class="gender">
+                <input type="checkbox" name="hobby" value="rr" id="read">
+                <label for="read">Reading</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" name="hobby" value="pp" id="photo">
+                <label for="photo">Photography</label>
+            </div>
+            <div class="gender">
+                <input type="checkbox" name="hobby" value="tr" id="travel">
+                <label for="travel">Travelling</label>
+            </div>
+        </div>
+        <br><br>
+
+        <!-- <input type="search"><br>
+        <input type="range"><br>
+        <input type="color"><br>
+        <input type="file"><br>
+        <br><br> -->
+
+        <div class="button-div">
+            <button>Register</button>
+            <input type="submit">
+            <input type="reset">
+        </div>
+
+     </form>
+
+
+</body>
+</html>
